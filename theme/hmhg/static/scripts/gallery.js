@@ -2,7 +2,7 @@
 
 var winWidth = $(window).width();
 var winHeight = $(window).height();
-var curImg;     //Holds jquery object of .gallery-img being displayed in lightbox
+var curImg;
 
 $(document).ready(function() {
   var gallery = $('.gallery');
@@ -12,32 +12,40 @@ $(document).ready(function() {
   var cross = $('.cross');
   var leftArrow = $('.left');
   var rightArrow = $('.right');
+  var descbox = $('.lightbox-desc');
 
-  img.click(function() {    //Displays image clicked on
-    blowUp(this);
+  img.click(function() {
     curImg = $(this);
+    blowUp(curImg);
   });
 
-  cross.click(function() {    //Closes lightbox when cross is clicked
+  cross.click(function() {
     container.hide();
   });
 
-  rightArrow.click(function() {   //Moves to next image when right arrow is clicked
-    if ($(curImg).attr('src') !== $(gallery).find(">:last-child").find(">:first-child").attr('src')) {  //makes sure not last image
+  rightArrow.click(function() {
+    if ($(curImg).attr('src') !== $(gallery).find(">:last-child").find(">:first-child").attr('src')) {
       curImg = $(curImg).parent().next().find(">:first-child");
     }
     blowUp(curImg);
   });
 
-  leftArrow.click(function() {    //Moves to previous image when left arrow is clicked
-    if ($(curImg).attr('src') !== $(gallery).find(">:nth-child(2)").find(">:first-child").attr('src')) {  //makes sure not first image
+  leftArrow.click(function() {
+    if ($(curImg).attr('src') !== $(gallery).find(">:nth-child(2)").find(">:first-child").attr('src')) {
       curImg = $(curImg).parent().prev().find(">:first-child");
     }
     blowUp(curImg);
   });
 
-  var blowUp = function(element) {    //Function to blow up image onto lightbox
-    //Colouring arrows in event of first/last image
+  var blowUp = function(element) {
+    if ($(element).next().text() === '') {
+      $(lightbox).css('max-width', '100%');
+      $(descbox).hide();
+    } else {
+      $(lightbox).css('max-width', '80%');
+      $(descbox).show();
+    }
+
     if ($(element).attr('src') === $(gallery).find(">:nth-child(2)").find(">:first-child").attr('src')) {
       leftArrow.css('color', '#848484');
     } else {
@@ -50,26 +58,27 @@ $(document).ready(function() {
       rightArrow.css('color', '#ffffff');
     }
 
-    //Set source and display
     $(lightbox).attr('src', String($(element).attr("src")));
     container.css('display', 'table');
+    $(descbox).css('height', $(lightbox).height());
+    $(descbox).html('<p>' + $(curImg).next().text() + '</p>');
   }
 
-  $(document).keydown(function(e) {   //Listens for keypresses when lightbox visible
+  $(document).keydown(function(e) {
     if(container.css("display") !== "none") {
-      if (e.which == 37) {  //left arrow moves backwards
+      if (e.which == 37) {
         if ($(curImg).attr('src') !== $(gallery).find(">:nth-child(2)").find(">:first-child").attr('src')) {
           curImg = $(curImg).parent().prev().find(">:first-child");
         }
         blowUp(curImg);
       }
-      if (e.which == 39) {  //right arrow moves forwards
+      if (e.which == 39) {
         if ($(curImg).attr('src') !== $(gallery).find(">:last-child").find(">:first-child").attr('src')) {
           curImg = $(curImg).parent().next().find(">:first-child");
         }
         blowUp(curImg);
       }
-      if (e.which == 27) {  //esc closes
+      if (e.which == 27) {
         container.hide();
       }
     }
