@@ -8,6 +8,8 @@ For hundreds of years Holcombe Valley was home to a myriad of farms, cottages an
 
 The original documents are generally located in Archives at Preston, Bury or Bolton although somewhat surprisingly, about 90% of what we need is available online, or we have photographed, and therefore most research can be done at home. This allows people to be involved in the group without needing to be based locally.
 
-Below is a list of cottages and farmsteads once on the moorland, just click on one of the names to explore!
+Below is a list of cottages and farmsteads once on the moorland, just click\* on one of the names to explore!
 
 HERE BE A LIST
+
+\* this is probably not the best way of displaying this content, i propose a list on this page essentially of paragraphs on each farm because each individual farm page will be tiny and also UX would be awful if they want a nice overview of the farms (i.e. what a user of the site would probably actually want).
