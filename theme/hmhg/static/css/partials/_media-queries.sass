@@ -64,7 +64,13 @@
   .current-page
     border-radius: 0
 
+  .lightbox-inner
+    flex-direction: column
 
+  .lightbox-desc
+    +display-flex
+    width: 100%
+    align-self: flex-end
 
 @media (max-width: 992px) and (min-width: 768px)
   .col25
@@ -110,7 +116,13 @@
   .row
     margin: 5% 2%
 
+  .lightbox-inner
+    flex-direction: column
 
+  .lightbox-desc
+    +display-flex
+    width: 100%
+    align-self: flex-end
 
 @media (max-width: 1024px) and (min-width: 993px)
   .col75
@@ -120,3 +132,11 @@
   .row
     margin: 5% 1%
     width: 98%
+
+  .lightbox-inner
+    flex-direction: column
+
+  .lightbox-desc
+    +display-flex
+    width: 100%
+    align-self: flex-end

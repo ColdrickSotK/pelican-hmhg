@@ -489,7 +489,18 @@ footer {
     margin: 0 auto; }
 
   .current-page {
-    border-radius: 0; } }
+    border-radius: 0; }
+
+  .lightbox-inner {
+    flex-direction: column; }
+
+  .lightbox-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    align-self: flex-end; } }
 @media (max-width: 992px) and (min-width: 768px) {
   .col25 {
     width: 45%;
@@ -523,13 +534,35 @@ footer {
     margin: 4em auto; }
 
   .row {
-    margin: 5% 2%; } }
+    margin: 5% 2%; }
+
+  .lightbox-inner {
+    flex-direction: column; }
+
+  .lightbox-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    align-self: flex-end; } }
 @media (max-width: 1024px) and (min-width: 993px) {
   .col75 {
     width: 65%; }
 
   .row {
     margin: 5% 1%;
-    width: 98%; } }
+    width: 98%; }
+
+  .lightbox-inner {
+    flex-direction: column; }
+
+  .lightbox-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    align-self: flex-end; } }
 
 /*# sourceMappingURL=hmhg-compiled.css.map */
