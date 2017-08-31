@@ -96,6 +96,20 @@ $(document).ready(function() {
   $(".cal-month-container").html(calString);
   $(".cal-label").html(monthNames[month] + ' ' + String(year));
 
+  if ($(window).width() < 940) {
+    $(".cal-settings").hide();
+    $(".cal-selected").removeClass("cal-selected");
+    $(".year-view").addClass("cal-selected");
+    $(".cal-month-container").hide();
+    $(".cal-header").hide();
+    $(".cal-year-container").show();
+    $(".cal-label").html(String(curYear));
+
+    if (curYear === year) {
+      $("." + monthNames[month] + " .cal-year-head").css("background-color", "#236323");
+    }
+  }
+
   $(".cal-left").click(function() {
     if ($(".month-view").hasClass("cal-selected")) {
       curMonth = (curMonth + 11) % 12;
