@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% for category, items in categories %}
+  {% if category.name.lower() == 'events' %}
+    {% set events = items|reverse()|rejectattr('happened')|list() %}
+    {% for event in events %}
+<div class="row" id="{{ event.slug }}">
+  <div class="col75">
+    <h2>{{ event.title }}</h2>
+    <p class="metadata">{{ event.locale_date }}</p>
+    <p class="metadata">{{ event.location }}</p>
+    {% if event.price %}
+      <p class="metadata">{{ event.price }}</p>
+    {% endif %}
+    {% if event.type == 'talk' %}
+      <p>A talk by {{ event.speaker }}.</p>
+    {% else %}
+      {{ event.summary }}
+    {% endif %}
+  </div>
+</div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% endblock content %}

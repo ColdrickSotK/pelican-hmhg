@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron"></div>
+<h2 class="row-no-bottom-margin">Upcoming Events</h2>
 <div class="row events">
-  {% for category, articles in categories %}
+  {% for category, items in categories %}
     {% if category.name.lower() == 'events' %}
-      {% for article in articles[:4] %}
+      {% set events = items|reverse()|rejectattr('happened')|list() %}
+      {% for event in events[:4] %}
   <div class="col25">
-    <h2>{{ article.title }}</h2>
-    <p class="metadata">{{ article.locale_date }}</p>
-    {{ article.summary }}
+    <h2>{{ event.title }}</h2>
+    <p class="metadata">{{ event.locale_date }}</p>
+    {% if event.type == 'talk' %}
+      <p>A talk by {{ event.speaker }}.</p>
+    {% else %}
+      {{ event.summary }}
+    {% endif %}
     <div class="btn">
-      <a href="{{ article.url }}" class="btn-readmore">
+      <a href="/events#{{ event.slug }}" class="btn-readmore">
         <span>Read More</span>
       </a>
     </div>
