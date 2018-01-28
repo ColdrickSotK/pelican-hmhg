@@ -5,6 +5,7 @@
   <p>{{ article.content }}</p>
 </div>
 
+{% if article.gallery %}
 <div class='row gallery'>
   <h2>Gallery</h2>
   {% for path in article.gallery %}
@@ -13,17 +14,17 @@
   </div>
   {% endfor %}
 </div>
+{% endif %}
 {% endblock content %}
 
 {% block postfooter %}
-<div class='gallery-container'>
-  <div class='cross'>x</div>
-  <div class='left arrow'><</div>
-  <div class='lightbox-outer'>
-    <div class='lightbox-inner'>
-      <img class='lightbox'>
+  <div class="gallery-display">
+    <div class="gallery-overlay">
+      <div class="close">x</div>
+      <div class="arrow arrow-left"></div>
+      <img src="" class="gallery-item">
+      <div class="arrow arrow-right"></div>
+      <div class="caption"></div>
     </div>
   </div>
-  <div class='right arrow'>></div>
-</div>
 {% endblock %}
