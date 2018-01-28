@@ -24,7 +24,7 @@
         <div class="dropdown-content">
           <div class="navbarContainer">
             <a href="/" {% if not page and not article %}class='current-page'{% endif %}>Home</a>
-            {% for pg in pages %}
+            {% for pg in pages|sort(attribute='navorder') %}
             <a href="/{{ pg.url }}" {% if pg == page %}class='current-page'{% endif %}>{{ pg.title }}</a>
             {% endfor %}
           </div>
@@ -32,7 +32,7 @@
       </div>
       <div class="hidden-tiny">
         <a href="/" {% if not page and not article %}class='current-page'{% endif %}>Home</a>
-        {% for pg in pages %}
+        {% for pg in pages|sort(attribute='navorder') %}
         <a href="/{{ pg.url }}" {% if pg == page %}class='current-page'{% endif %}>{{ pg.title }}</a>
         {% endfor %}
       </div>
