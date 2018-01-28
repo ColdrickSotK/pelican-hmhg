@@ -1,6 +1,7 @@
 Title: About
 Slug: about
 Template: about
+NavOrder: 1
 Summary:
     <p>Holcombe Moor Heritage Group is a group of volunteers with an interest
     in discovering the history of the Holcombe Moor area. Much of this area is
@@ -38,4 +39,5 @@ appeal to a wider audience.
 
 We hope you would like to join HMHG and get involved not only in your
 specific area of interest (perhaps local history) but also in other areas
-in which we are active. Please visit our contact page here to do so.
+in which we are active. Please visit our contact page [here](/contact) to
+do so.
