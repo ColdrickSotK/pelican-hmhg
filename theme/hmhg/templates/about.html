@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron"></div>
+<div class="row">
+  <div class="col75">
+    <h2>About Us</h2>
+    <div class="text-left">
+      {{ page.content }}
+    </div>
+  </div>
+  <div class="col25">
+    <!-- TODO: Replace with an image of the group -->
+    <img src="/images/bottoms-mill/bottoms.jpg" height="100%" width="150%">
+  </div>
+</div>
+{% endblock content %}
