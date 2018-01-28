@@ -7,7 +7,8 @@
       {% for article in articles[:4] %}
   <div class="col25">
     <h2>{{ article.title }}</h2>
-    <p>{{ article.summary }}</p>
+    <p class="metadata">{{ article.locale_date }}</p>
+    {{ article.summary }}
     <div class="btn">
       <a href="{{ article.url }}" class="btn-readmore">
         <span>Read More</span>
@@ -26,7 +27,6 @@
         {{ page.summary }}
       {% endif %}
     {% endfor %}
-    <a href="#" class="btn-readmore"><span>Read More</span></a>
   </div>
   <div class="col25 projects">
     <h2>Projects</h2>
@@ -35,7 +35,7 @@
       {% if article.category.name.lower() == 'projects' %}
       <li class="clearfix">
         <a href="{{ article.url }}"><h3>{{ article.title  }}</h3></a>
-        <p>{{ article.summary }}</p>
+        <p>{{ article.short }}</p>
       </li>
       {% endif %}
       {% endfor %}
