@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Adam Coldrick'
-SITENAME = u'SockBlog'
+AUTHOR = u"The Brothers' Coldrick"
+SITENAME = u'Holcombe Moor Heritage Group'
 SITEURL = ''
 THEME = u'theme/hmhg'
 ARTICLE_SAVE_AS = u'{category}/{slug}.html'
@@ -13,9 +13,13 @@ PAGE_URL = u'{slug}'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
+
+DEFAULT_DATE_FORMAT = '%a %d %B %Y at %H:%M %p'
+
+STATIC_PATHS = ['newsletters', 'reports']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -25,14 +29,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = ()
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = ()
 
 DEFAULT_PAGINATION = False
 
