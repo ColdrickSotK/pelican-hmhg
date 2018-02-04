@@ -1,71 +1,95 @@
-.gallery-container
-  z-index: 1
-  display: none
-  top: 0
-  left: 0
-  height: 100%
-  width: 100%
-  background-color: rgba(0,0,0,0.5)
-  position: fixed
+.gallery h2 
+    margin: 0
 
+.gallery-img
+    cursor: pointer
 
-.lightbox-outer
-  display: table-cell
-  vertical-align: middle
-  margin: auto
+.gallery-display
+    display: none
+    position: fixed
+    z-index: 100
+    height: 100%
+    top: 0
+    left: 0
+    width: 100%
+    transition: 0.2s
 
+.gallery-item
+    max-width: 90%
+    max-height: 90%
+    user-select: none
 
-.lightbox-inner
-  max-width: 80%
-  min-width: 20%
-  max-height: 90vh
-  min-height: 10vh
-  margin: auto
-  overflow: hidden
-
-
-.lightbox
-  max-width: 100%
-  max-height: 100%
-  width: auto
-  height: auto
-  margin: auto
-  padding: auto
-  +display-flex
-
-
-.cross
-  font-size: 5rem
-  width: 3rem
-  color: white
-  position: fixed
-  top: 0
-  left: calc(100% - 3rem)
-  cursor: pointer
-  font-family: $roboto
-
+.gallery-overlay
+    width: 100%
+    height: 100%
+    overflow: hidden
+    background-color: rgba(0, 0, 0, 1)
+    display: flex
+    align-items: center
+    justify-content: center
 
 .arrow
-  font-size: 10rem
-  line-height: 10rem
-  color: white
-  position: fixed
-  height: 10rem
-  width: 6rem
-  padding: 0
-  margin: 0
-  top: calc(50% - 5rem)
-  cursor: pointer
-  user-select: none
+    position: fixed
+    z-index: 200
 
+.arrow-right
+    width: 0
+    height: 0
+    right: 3em
+    border-top: 60px solid transparent
+    border-bottom: 60px solid transparent
+    border-left: 60px solid white
+    cursor: pointer
+    user-select: none
 
-.left
-  left: calc(10% - 7rem)
+.arrow-left
+    width: 0
+    height: 0
+    left: 3em
+    border-top: 60px solid transparent
+    border-bottom: 60px solid transparent
+    border-right: 60px solid white
+    cursor: pointer
+    user-select: none
 
+.close
+    color: #fff
+    font-family: Arial
+    font-size: 7em
+    position: fixed
+    top: 0
+    right: 0.3em
+    cursor: pointer
+    user-select: none
 
-.right
-  left: calc(90% + 2rem)
+.caption
+    display: none
+    background: rgba(0, 0, 0, 0.5)
+    font-family: 'Roboto'
+    font-size: 1.5em
+    text-align: center
+    align-items: center
+    justify-content: center
+    position: fixed
+    bottom: 0
+    z-index: 100
+    width: 100%
+    height: 7em
+    color: #fff
 
+@media (max-width: 767px)
+    .arrow-right
+        border-top: 30px solid transparent
+        border-bottom: 30px solid transparent
+        border-left: 30px solid white
+        right: 1em
 
-.gallery-img:hover
-  cursor: pointer
+    .arrow-left
+        border-top: 30px solid transparent
+        border-bottom: 30px solid transparent
+        border-right: 30px solid white
+        left: 1em
+    
+    .close
+        right: 0.3em
+        font-size: 6em
