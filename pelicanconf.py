@@ -19,7 +19,7 @@ DEFAULT_LANG = u'en'
 
 DEFAULT_DATE_FORMAT = '%a %d %B %Y at %H:%M %p'
 
-STATIC_PATHS = ['newsletters', 'reports']
+STATIC_PATHS = ['images', 'newsletters', 'reports']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
