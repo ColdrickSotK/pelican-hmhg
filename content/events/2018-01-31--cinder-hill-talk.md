@@ -7,3 +7,4 @@ Summary: Telling the story of the site after our final year of excavation.
 Location: Greenmount Cricket Club, Bar Area
 Price: £3, refreshments included
 Slug: cinder-hill-2017-1
+Happened: True
