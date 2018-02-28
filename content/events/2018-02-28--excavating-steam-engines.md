@@ -1,4 +1,4 @@
-Title: Excavating Early Steam Engines around Manchester
+Title: POSTPONED UNTIL WEATHER IMPROVES: Excavating Early Steam Engines around Manchester
 Date: 2018-02-28 19:30
 Category: events
 Type: talk
